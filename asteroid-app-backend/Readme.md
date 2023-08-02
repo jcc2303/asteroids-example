@@ -17,12 +17,12 @@ npm install
 node server.js
 ```
 
-This will start the server and it will be listening on `http://localhost:3000`.
+This will start the server and it will be listening on `http://localhost:8000`.
 
 5. Open a web browser or use a tool like Postman to make a GET request to the following endpoint:
 
 ```
-http://localhost:3000/api/asteroids?start_date=2015-09-07&end_date=2015-09-08
+http://localhost:8000/api/asteroids?start_date=2015-09-07&end_date=2015-09-08
 ```
 
 Make sure to replace the `start_date` and `end_date` values with the desired date range. This request

@@ -1,7 +1,11 @@
 const express = require('express');
+const axios = require('axios');
+const cors = require('cors');
 const app = express();
-const port = 3000;
+const port = 8000;
 
+// Enable CORS for all routes
+app.use(cors());
 
 app.get('/', (req, res) => {
   const asteroids = `welcome
