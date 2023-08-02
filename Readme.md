@@ -10,9 +10,9 @@ As a backend developer, my role is to handle the server-side logic and database 
 
 To develop the backend of this application, I will be using the following technologies:
 
-- Programming Language: [Node.js](https://nodejs.org/en/)
-- Web Framework: [Express.js](https://expressjs.com/)
-- Database: [MongoDB](https://www.mongodb.com/)
+- Backend Server: [Node.js](https://nodejs.org/en/)
+- Backend Framework: [Express.js](https://expressjs.com/)
+<!-- - Database: [MongoDB](https://www.mongodb.com/) -->
 
 I have extensive experience developing backend applications using Node.js and Express.js. These technologies provide a robust and scalable foundation for building server-side logic. MongoDB will be used as the database to store information about the asteroids and user favorites.
 
@@ -21,11 +21,11 @@ I have extensive experience developing backend applications using Node.js and Ex
 The following API endpoints will be implemented:
 
 - `GET /asteroids`: Retrieves a list of asteroids.
-- `GET /asteroids/:id`: Retrieves detailed information about a specific asteroid.
+<!-- - `GET /asteroids/:id`: Retrieves detailed information about a specific asteroid.
 - `GET /asteroids/search`: Retrieves a list of asteroids within a specified date range.
 - `POST /favorites`: Add an asteroid to the list of favorites.
 - `GET /favorites`: Retrieves a list of favorite asteroids.
-- `GET /favorites/:id`: Retrieves detailed information about a favorite asteroid.
+- `GET /favorites/:id`: Retrieves detailed information about a favorite asteroid. -->
 
 ### Business Logic
 

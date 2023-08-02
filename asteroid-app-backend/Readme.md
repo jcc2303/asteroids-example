@@ -7,14 +7,15 @@ the steps below:
 
 3. Install the required dependencies by running the following command:
 
-```
+```sh
 npm install
 ```
 
 4. Once the dependencies are installed, start the backend server by running the following command:
 
-```
-node server.js
+```sh
+npm start
+# that runs node server.js
 ```
 
 This will start the server and it will be listening on `http://localhost:8000`.
