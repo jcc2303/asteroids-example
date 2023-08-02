@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./AsteroidList.css"; // Import the CSS file
+import AsteroidDetails from './AsteroidDetails';
 
 function AsteroidList({ asteroids }) {
   const [sortOrder, setSortOrder] = useState("asc");
@@ -30,40 +31,7 @@ function AsteroidList({ asteroids }) {
           <div>
             {asteroids.map((asteroid, index) => (
               <div className="asteroid-details" key={index}>
-                <div >
-                  <h3 className="asteroid-name">{asteroid.name}</h3>
-                  <p>
-                    <strong>Estimated Diameter:</strong>{" "}
-                    {
-                      asteroid.estimated_diameter.kilometers
-                        .estimated_diameter_min
-                    }{" "}
-                    -{" "}
-                    {
-                      asteroid.estimated_diameter.kilometers
-                        .estimated_diameter_max
-                    }{" "}
-                    km
-                  </p>
-                  <p>
-                    <strong>NASA JPL URL:</strong>{" "}
-                    <a
-                      href={asteroid.nasa_jpl_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {asteroid.nasa_jpl_url}
-                    </a>
-                  </p>
-                  <p>
-                    <strong>Absolute Magnitude (H):</strong>{" "}
-                    {asteroid.absolute_magnitude_h}
-                  </p>
-                  <p>
-                    <strong>Is Potentially Hazardous Asteroid:</strong>{" "}
-                    {asteroid.is_potentially_hazardous_asteroid ? "Yes" : "No"}
-                  </p>
-                </div>
+                <AsteroidDetails key={asteroid.id} asteroid={asteroid} />
               </div>
             ))}
           </div>
