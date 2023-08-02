@@ -1,30 +1,51 @@
 import {useEffect, useState} from 'react';
-import AsteroidList from './AsteroidList';
+import AsteroidList from './components/asteroids/AsteroidList';
 import fetchData from './client';
+import DateRangePicker from './components/dates/DateRangePicker';
+import fakeData from './data/api.json'
+
 
 function App() {
   const [data, setData] = useState({});
   const [asteroids, setAsteroids] = useState([]);
+  const [error, setError] = useState(null);
 
+  const  getAsteroids = async ({ start, end }) => {
+    try {
+      const result = await fetchData({ start, end })
+      console.log('result');
+      setData(result)
+    } catch (err) {
+      console.log('error', err)
+      setData(fakeData); 
+      setError('Error, using fake data')
+    }
+  }
+  
+  const handleDateChange = ({ start, end }) => {
+    getAsteroids({ start, end })
+  };
 
   useEffect(() => {
     const extractedAsteroids = extractAsteroids(data)
-    console.log('extractedAsteroids', extractedAsteroids);
     setAsteroids(extractedAsteroids)
   }, [data]);
 
   useEffect(() => {
-    fetchData()
-    .then((data) => setData(data));
-  // fetch('https://localhost:8000/api/asteroids')
-  //     .then((response) => response.json())
-  //     .then((data) => setAsteroids(data.near_earth_objects));
+    getAsteroids({})
   }, []);
 
   return (
-    <div className="App">
-      <AsteroidList asteroids={asteroids} />
+    <div>
+      <div>
+        <DateRangePicker onDateChange={handleDateChange} />
+        {error && <p>{error}</p>}
+        <div className="App">
+          <AsteroidList asteroids={asteroids} />
+        </div>
+      </div>      
     </div>
+
   );
 }
 

@@ -1,0 +1,30 @@
+/* Add your styles here */
+.asteroid-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .asteroid-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .asteroid-details {
+    margin-top: 5px;
+  }
+  
+  .asteroid-details p {
+    margin: 5px 0;
+  }
+  
+  .sort-button {
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
